@@ -1,0 +1,50 @@
+﻿@page
+@model DungeonMaker.Pages.Dungeons.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Dungeon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dungeon.ID" />
+            <div class="form-group">
+                <label asp-for="Dungeon.RoomName" class="control-label"></label>
+                <input asp-for="Dungeon.RoomName" class="form-control" />
+                <span asp-validation-for="Dungeon.RoomName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dungeon.Width" class="control-label"></label>
+                <input asp-for="Dungeon.Width" class="form-control" />
+                <span asp-validation-for="Dungeon.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dungeon.Height" class="control-label"></label>
+                <input asp-for="Dungeon.Height" class="form-control" />
+                <span asp-validation-for="Dungeon.Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dungeon.Wall" class="control-label"></label>
+                <input asp-for="Dungeon.Wall" class="form-control" />
+                <span asp-validation-for="Dungeon.Wall" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
